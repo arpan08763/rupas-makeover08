@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Party Makeup</title>
+
+<style>
+
+/* 🔥 FONTS */
+@font-face {font-family:'Archane';src:url('Archane.ttf');}
+@font-face {font-family:'Zaslia';src:url('zaslia.ttf');}
+
+/* 💎 BODY */
+body{
+margin:0;
+font-family:'Zaslia';
+background:linear-gradient(135deg,#fff0f5,#ffe0ea,#fceabb);
+overflow-x:hidden;
+}
+
+/* 🔥 INTRO */
+.intro{
+position:fixed;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#fff0f5,#fceabb);
+z-index:9999;
+animation:fadeOut 2s forwards;
+animation-delay:2.5s;
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+.intro h1{
+font-family:'Archane';
+font-size:45px;
+color:#b8962e;
+animation:zoom 1.5s ease;
+}
+
+@keyframes zoom{
+from{transform:scale(0);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+/* 👑 HEADING */
+h1{
+text-align:center;
+padding:30px;
+font-family:'Archane';
+font-size:48px;
+background:linear-gradient(45deg,#d4af37,#ffd700,#b8962e);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* 📸 SLIDER */
+.slider{
+overflow:hidden;
+margin:20px;
+}
+
+.slide-track{
+display:flex;
+width:max-content;
+animation:scroll 25s linear infinite;
+}
+
+.slide-track img{
+width:260px;
+height:200px;
+margin:10px;
+border-radius:15px;
+object-fit:contain;
+background:#fff;
+padding:5px;
+cursor:pointer;
+transition:0.3s;
+
+/* FIX BLUE */
+backface-visibility:hidden;
+will-change:transform;
+}
+
+.slide-track img:hover{
+transform:scale(1.1);
+box-shadow:0 10px 30px rgba(212,175,55,0.7);
+}
+
+/* 🔥 PERFECT LOOP */
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* 📱 MOBILE */
+@media(max-width:768px){
+.slide-track{
+animation:none;
+flex-wrap:wrap;
+justify-content:center;
+}
+.slide-track img{
+width:90%;
+height:auto;
+}
+}
+
+/* 🔥 POPUP BLUR */
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+backdrop-filter:blur(12px);
+background:rgba(0,0,0,0.4);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.popup img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+animation:zoomPop 0.3s ease;
+}
+
+@keyframes zoomPop{
+from{transform:scale(0.6);}
+to{transform:scale(1);}
+}
+
+/* 📲 BUTTON */
+.whatsapp, .booking{
+position:fixed;
+right:20px;
+padding:14px 18px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:9999;
+}
+
+.whatsapp{
+bottom:20px;
+background:#25D366;
+}
+
+.booking{
+bottom:80px;
+background:#ff4d6d;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 INTRO -->
+<div class="intro">
+<h1>Rupa's Makeover</h1>
+</div>
+
+<h1>Party Makeup</h1>
+
+<!-- 📸 SLIDER -->
+<div class="slider">
+<div class="slide-track">
+
+<img src="e1.jpeg" onclick="openImg(this.src)">
+<img src="e2.jpeg" onclick="openImg(this.src)">
+<img src="e3.jpeg" onclick="openImg(this.src)">
+<img src="e4.jpeg" onclick="openImg(this.src)">
+<img src="e5.jpeg" onclick="openImg(this.src)">
+
+<!-- repeat for smooth loop -->
+<img src="e1.jpeg" onclick="openImg(this.src)">
+<img src="e2.jpeg" onclick="openImg(this.src)">
+<img src="e3.jpeg" onclick="openImg(this.src)">
+<img src="e4.jpeg" onclick="openImg(this.src)">
+<img src="e5.jpeg" onclick="openImg(this.src)">
+
+</div>
+</div>
+
+<!-- 🔥 POPUP -->
+<div class="popup" id="popup" onclick="closeImg()">
+<img id="popupImg">
+</div>
+
+<!-- 📲 BUTTON -->
+<a href="https://wa.me/918617352554" class="whatsapp">WhatsApp</a>
+<a href="https://wa.me/918617352554?text=Hello%20I%20want%20to%20book%20Party%20Makeup" class="booking">Book Now</a>
+
+<script>
+
+/* intro hide */
+setTimeout(()=>{
+document.querySelector('.intro').style.display="none";
+},2500);
+
+/* popup */
+function openImg(src){
+document.getElementById("popup").style.display="flex";
+document.getElementById("popupImg").src = src;
+}
+
+function closeImg(){
+document.getElementById("popup").style.display="none";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html><html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rupa's Makeover</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><style>
+
+/* 🔥 FONTS */
+@font-face {font-family:'Archane';src:url('Archane.ttf');}
+@font-face {font-family:'Zaslia';src:url('zaslia.ttf');}
+
+/* 💎 BODY */
+body{
+margin:0;
+font-family:'Zaslia';
+background:linear-gradient(135deg,#fff0f5,#ffe4ec,#fceabb);
+overflow-x:hidden;
+}
+
+/* 🔥 INTRO */
+.intro{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#fff0f5,#fceabb);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+animation:fadeOut 2s ease forwards;
+animation-delay:2.5s;
+}
+
+.intro img{
+width:120px;
+height:120px;
+border-radius:50%;
+box-shadow:0 0 25px gold;
+animation:zoomLogo 1.5s ease;
+}
+
+.intro h1{
+font-family:'Archane';
+font-size:32px;
+color:#b8962e;
+}
+
+@keyframes zoomLogo{
+from{transform:scale(0);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeOut{
+to{opacity:0; visibility:hidden;}
+}
+
+/* 🌐 SOCIAL */
+.social{
+position:fixed;
+top:15px;
+right:15px;
+z-index:1000;
+}
+.social a{
+margin-left:10px;
+font-size:20px;
+color:#333;
+}
+.social a:hover{
+color:#d4af37;
+}
+
+/* 💎 HERO */
+.hero{
+text-align:center;
+padding-top:90px;
+}
+
+.hero img{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.hero h1{
+font-family:'Archane';
+font-size:32px;
+}
+
+.tagline{
+color:#555;
+font-size:14px;
+}
+
+/* 💎 BUTTON */
+.services{
+display:flex;
+justify-content:center;
+gap:15px;
+margin:30px;
+flex-wrap:wrap;
+}
+
+.service-btn{
+padding:12px 20px;
+border-radius:50px;
+background:linear-gradient(45deg,#d4af37,#ffd700,#b8962e);
+text-decoration:none;
+font-family:'Archane';
+color:black;
+}
+
+/* 📸 SLIDER */
+.slider{
+overflow:hidden;
+margin:30px;
+}
+
+.slide-track{
+display:flex;
+width:200%;
+animation:scroll 18s linear infinite;
+}
+
+.slide-track img{
+width:180px;
+height:130px;
+margin:8px;
+border-radius:12px;
+object-fit:contain;
+background:#fff;
+padding:5px;
+cursor:pointer;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* 🔥 POPUP */
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.4);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.popup img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+}
+
+/* 💎 ABOUT */
+.section{
+margin:30px;
+padding:20px;
+background:rgba(255,255,255,0.6);
+border-radius:12px;
+text-align:center;
+}
+
+/* 🖤 FOOTER */
+.footer{
+background:#fff;
+padding:20px;
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:space-between;
+}
+
+.footer-col{
+flex:1;
+min-width:150px;
+}
+
+.footer h3{
+font-family:'Archane';
+font-size:18px;
+}
+
+.footer p, .footer a{
+font-size:14px;
+color:#555;
+text-decoration:none;
+display:block;
+margin:5px 0;
+}
+
+/* 📲 BUTTON */
+.whatsapp, .booking{
+position:fixed;
+right:15px;
+padding:10px 14px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+.whatsapp{
+bottom:15px;
+background:#25D366;
+}
+.booking{
+bottom:60px;
+background:#ff4d6d;
+}
+
+/* 💻 DESKTOP FIX */
+@media(min-width:768px){
+
+.hero img{width:170px;height:170px;}
+.hero h1{font-size:48px;}
+
+.slide-track img{
+width:260px;
+height:200px;
+}
+
+.service-btn{
+padding:15px 30px;
+}
+
+}
+
+</style></head><body><!-- 🔥 INTRO --><div class="intro">
+<img src="logo.png">
+<h1>Rupa's Makeover</h1>
+</div><!-- 🌐 SOCIAL --><div class="social">
+<a href="https://www.instagram.com/tuli8024" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/share/188ANZJWeC/" target="_blank"><i class="fab fa-facebook"></i></a>
+</div><!-- 💎 HERO --><div class="hero">
+<img src="artist.png">
+<h1>Rupa Bapari</h1>
+<p class="tagline">Enhance Your Beauty</p>
+</div><!-- 💎 SERVICES --><div class="services">
+<a href="bridal.html" class="service-btn">Bridal Makeup</a>
+<a href="party.html" class="service-btn">Party Makeup</a>
+</div><!-- 📸 GALLERY --><div class="slider">
+<div class="slide-track"><img src="g1.jpg" onclick="openImg(this.src)">
+<img src="g2.jpg" onclick="openImg(this.src)">
+<img src="g3.jpg" onclick="openImg(this.src)">
+<img src="g4.jpg" onclick="openImg(this.src)">
+<img src="g5.jpg" onclick="openImg(this.src)"><img src="g1.jpg" onclick="openImg(this.src)">
+<img src="g2.jpg" onclick="openImg(this.src)">
+<img src="g3.jpg" onclick="openImg(this.src)">
+<img src="g4.jpg" onclick="openImg(this.src)">
+<img src="g5.jpg" onclick="openImg(this.src)"></div>
+</div><!-- 🔥 POPUP --><div class="popup" id="popup" onclick="closeImg()">
+<img id="popupImg">
+</div><!-- 💎 ABOUT --><div class="section">
+<h2>About Artist</h2>
+<p>Professional makeup artist with strong experience in bridal & party looks.</p>
+</div><!-- 🖤 FOOTER --><div class="footer"><div class="footer-col">
+<h3>Rupa's Makeover</h3>
+<p>Professional beauty services.</p>
+</div><div class="footer-col">
+<h3>Contact</h3>
+<p>📞 +918617352554</p>
+<p>📍 Hooghly - 712514</p>
+</div><div class="footer-col">
+<h3>Follow Us</h3>
+<a href="https://www.instagram.com/tuli8024">Instagram</a>
+<a href="https://www.facebook.com/share/188ANZJWeC/">Facebook</a>
+</div></div><!-- 📲 BUTTON --><a href="https://wa.me/918617352554" class="whatsapp">WhatsApp</a>
+<a href="https://wa.me/918617352554?text=Hello%20I%20want%20to%20book" class="booking">Book Now</a>
+
+<script>
+
+/* intro hide */
+setTimeout(()=>{
+document.querySelector('.intro').style.display="none";
+},2500);
+
+/* popup */
+function openImg(src){
+document.getElementById("popup").style.display="flex";
+document.getElementById("popupImg").src = src;
+}
+
+function closeImg(){
+document.getElementById("popup").style.display="none";
+}
+
+</script></body>
+</html>
